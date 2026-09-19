@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+
 
 struct pessoas{
     char nome[50];
@@ -9,26 +11,12 @@ struct pessoas{
 
 int main(){
     struct pessoas p [5];
-    int i, posicao, opcao;
-    char buffer[50]; // Esse cara ajuda a trocar 
-
-// Fazendo o menu do CRUD.
-
-do {
-    printf("Escolha uma das opcoes:\n");
-    printf("[1] Cadastrar.\n");
-    printf("[2] Ver a lista.\n");
-    printf("[3] Atualizar a lista.\n");
-    printf("[4] Deletar o Usuario.\n");
-    printf("[5] Sair.\n");
-    scanf("%d", &opcao);
-}while(opcao != 5);
-
-
-
+    int i;
+    char buffer[50]; // Esse cara ajuda a trocar ,
 
 // Pedindo os dados da pessoa.
 
+    
     for(i = 0 ; i < 5; i++){
         printf("Digite o nome da pessoa %d: ", i+1);
         fgets(p[i].nome, sizeof(p[i].nome), stdin);
@@ -47,15 +35,38 @@ do {
     for(i = 0 ; i < 5; i++){
         printf("pessoa %d -> nome: %s | idade: %d | telefone: %d\n", i+1, p[i].nome, p[i].idade, p[i].telefone);
     }
-    return 0;
 
-// Atualiza a lista.
-    printf("Escolha uma das opcoes (1 a 5) para atualizar o cadastro: ");
-    scanf("%d", &posicao);
+// Alterações na lista de pessoas escolhendo apenas uma pessoa.
 
-    
+int posicao;
+    printf("\nDigite a posicao da pessoa que deseja alterar (1-5): ");
+    fgets(buffer, sizeof(buffer), stdin);
+    posicao = atoi(buffer) - 1; // aqui esta ajustando o indice que seria 0 para 1 (eu acho que é isso)
 
+    if (posicao >= 0 && posicao < 5){
+    printf("\nDigite o novo nome (ou ENTER para manter): ");
+    fgets(buffer, sizeof(buffer), stdin);
+    if (buffer[0] !='\n'){
+        buffer[strcspn(buffer, "\n")] = '\0';
+        strcpy(p[posicao].nome, buffer);
+    }
 
+    printf("Digite a nova idade (ou ENTER para manter): ");
+    fgets(buffer, sizeof(buffer), stdin);
+    if (buffer[0] != '\n'){
+        p[posicao].idade = atoi(buffer);
+    }
 
+    printf("Digite o novo telefone (ou ENTER para manter): ");
+    fgets(buffer, sizeof(buffer), stdin);
+    if (buffer[0] !='\n'){
+        p[posicao].telefone = atoi(buffer);
+    }
+
+     printf("\nRegistro atualizado: Nome: %s | idade: %d | telefone: %d\n", p[posicao].nome, p[posicao].idade, p[posicao].telefone);
+
+    else{
+        printf("Posicao invalida!");
+    }
 
 }
