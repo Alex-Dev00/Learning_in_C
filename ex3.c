@@ -18,7 +18,7 @@ int main(){
 
 
 void notaValida(float nota){
-    return nota >= 0 || nota <= 10;
+    return nota >= 0 && nota <= 10;
 }
 
 float situacao(float nota){
