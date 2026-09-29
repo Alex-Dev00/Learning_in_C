@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-
 struct pessoas{
     char nome[50];
     int idade;
@@ -63,10 +62,5 @@ int posicao;
         p[posicao].telefone = atoi(buffer);
     }
 
-     printf("\nRegistro atualizado: Nome: %s | idade: %d | telefone: %d\n", p[posicao].nome, p[posicao].idade, p[posicao].telefone);
-
-    else{
-        printf("Posicao invalida!");
-    }
-
+}
 }

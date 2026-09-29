@@ -2,15 +2,15 @@
 
 #include <stdio.h>
 
-/*void mostrarCabecalho(){
-    printf("=== SISTEMA DE NOTAS===\n"); //Executando a função
+void mostrarCabecalho(){
+    printf("=== SISTEMA DE NOTAS ===\n"); //Executando a função
 }
 
 int main(){
     mostrarCabecalho();  //chamar a função
-}*/
+}
 
-int maior(int a, int b){
+/*int maior(int a, int b){
     if (a>b){
         return a;
     }
@@ -24,4 +24,4 @@ int resultado = maior(10, 7);
     printf("%d\n", resultado);
 
     return 0;
-}
+}*/
