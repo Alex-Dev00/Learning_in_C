@@ -7,6 +7,8 @@
 
 #include <stdio.h> 
 
+void cadastroAgentes();
+
 int main(){
     
     int opcao = -1;
@@ -20,9 +22,11 @@ int main(){
 
     switch(opcao){
         case 1:
-            printf("Cadastro de agentes");
-
+            
+            cadastroAgentes();
+            
             break;
+
         case 2:
             printf("Lista de agentes");
 
@@ -36,9 +40,26 @@ int main(){
         case 0:
 
             default:
+            break;
 
     }
 
     }
 
+}
+
+void cadastroAgentes(){
+    
+    char nomeAgente[50];
+    int idAgente;
+
+    printf("==== Cadastrar Agente ====\n");
+
+    printf("Digite o nome do Agente: \n");
+    scanf(" %s", &nomeAgente);
+
+    printf("Coloque um ID para o Agente: \n");
+    scanf("%d", &idAgente);
+
+    printf("Agente %s cadastrado com sucesso!\n", nomeAgente);
 }
