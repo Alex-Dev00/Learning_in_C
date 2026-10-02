@@ -3,7 +3,6 @@
 // Organizar com as funcoes em baixo para nao dar problema de poluir o codigo.
 // Comentar em cada linha para que todos do Pim entenda o que esta acontecendo.
 // Estudar sobre como armazenar os dados e salvar em algum lugar.
-// GO TO WORK!
 
 #include <stdio.h> 
 
@@ -56,7 +55,7 @@ void cadastroAgentes(){
     printf("==== Cadastrar Agente ====\n");
 
     printf("Digite o nome do Agente: \n");
-    scanf(" %s", &nomeAgente);
+    scanf("%s", &nomeAgente);
 
     printf("Coloque um ID para o Agente: \n");
     scanf("%d", &idAgente);
