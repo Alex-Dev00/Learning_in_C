@@ -5,11 +5,28 @@
 // Estudar sobre como armazenar os dados e salvar em algum lugar.
 
 #include <stdio.h> 
+#include <stdlib.h>
+#include <string.h>
+#define TAM 50
 
+int quantidade = 0;
+
+//struct Agentes(){
+//    char nomeAgente[50];
+//    int  idAgente;
+
+
+void menu();
 void cadastroAgentes();
 
 int main(){
+
+    menu();
     
+}
+
+void menu(){
+
     int opcao = -1;
 
     while(opcao !=0){
@@ -45,6 +62,8 @@ int main(){
 
     }
 
+
+    
 }
 
 void cadastroAgentes(){
@@ -52,13 +71,16 @@ void cadastroAgentes(){
     char nomeAgente[50];
     int idAgente;
 
+
     printf("==== Cadastrar Agente ====\n");
-
-    printf("Digite o nome do Agente: \n");
-    scanf("%s", &nomeAgente);
-
+    
     printf("Coloque um ID para o Agente: \n");
     scanf("%d", &idAgente);
+    
+    printf("Digite o nome do Agente: \n");
+    fgets(nomeAgente[quantidade], 5, stdin);
 
-    printf("Agente %s cadastrado com sucesso!\n", nomeAgente);
+   
+
+    printf("%s", nomeAgente[50]);
 }
