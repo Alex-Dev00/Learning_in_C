@@ -13,8 +13,8 @@ int quantidade = 0;
 
 //struct Agentes(){
 //    char nomeAgente[50];
-//    int  idAgente;
-
+//   int  idAgente;
+//}
 
 void menu();
 void cadastroAgentes();
@@ -74,13 +74,17 @@ void cadastroAgentes(){
 
     printf("==== Cadastrar Agente ====\n");
     
-    printf("Coloque um ID para o Agente: \n");
+    printf("Coloque um ID para o Agente: ");
     scanf("%d", &idAgente);
     
-    printf("Digite o nome do Agente: \n");
-    fgets(nomeAgente[quantidade], 5, stdin);
+    getchar();
+
+    printf("Digite o nome do Agente:");
+    fgets(nomeAgente, sizeof(nomeAgente), stdin);
 
    
+    printf("Cadastro criado com sucesso.\n");
+    printf("Nome do agente: %sid: %d\n", nomeAgente, idAgente);
+    
 
-    printf("%s", nomeAgente[50]);
 }
